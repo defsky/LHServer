@@ -6,7 +6,7 @@
 #define GRID_SIZE           533.33333f
 #define LOAD_MAX_TRIANGLES  220000
 #define MAPID               489
-#define VMAPS_DIR           "/data/client/vmaps"
+#define VMAPS_DIR           "/elysium/wowserver/data/client/vmaps"
 #define CENTER_X            1524.0f
 #define CENTER_Y            1457.0f
 #define RADIUS              450.0f
