@@ -33,6 +33,7 @@ int main(int argc, char* argv[])
     std::string src = argv[1];
     std::string dest = argv[2];
 
+
     std::cout << "using " << src << " as source directory and writing output to " << dest << std::endl;
 
     VMAP::TileAssembler* ta = new VMAP::TileAssembler(src, dest);
