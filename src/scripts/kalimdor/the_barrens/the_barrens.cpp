@@ -1332,7 +1332,26 @@ struct npc_warlord_kromzarAI : public ScriptedAI
 
     void JustDied(Unit* pKiller)
     {
-        m_creature->CastSpell(m_creature, 13965, true); //SPELL_BANNER
+        //m_creature->CastSpell(m_creature, 13965, true); //SPELL_BANNER
+
+        //modified to drop 5 banners
+        //
+        uint32 id = 164690;  // Krom'zar's Banner
+        uint32 spawntm = 300;
+
+        float x = m_creature->GetPositionX() + 3;
+        float y = m_creature->GetPositionY() + 3;
+        float z = m_creature->GetPositionZ();
+        float ang = m_creature->GetOrientation();
+
+        float rot2 = sin(ang / 2);
+        float rot3 = cos(ang / 2);
+
+        for (int i=0;i<5;i++) 
+        {
+            if (!pKiller->SummonGameObject(id, x, y, z, ang, 0, 0, rot2, rot3, spawntm))
+                sLog.outDebug((std::string("SummonGameObject failed,GameObject id:") + std::to_string(id)).c_str());
+        }
     }
     void UpdateAI(const uint32 uiDiff)
     {
