@@ -1337,11 +1337,11 @@ struct npc_warlord_kromzarAI : public ScriptedAI
         //modified to drop 5 banners
         //
         uint32 id = 164690;  // Krom'zar's Banner
-        uint32 spawntm = 300;
+        uint32 spawntm = 300000;
 
         float x = m_creature->GetPositionX() + 3;
         float y = m_creature->GetPositionY() + 3;
-        float z = m_creature->GetPositionZ();
+        float z = m_creature->GetPositionZ() - 1;
         float ang = m_creature->GetOrientation();
 
         float rot2 = sin(ang / 2);
